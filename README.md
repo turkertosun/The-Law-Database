@@ -5,6 +5,7 @@ This solution is important because it empowers legal practitioners, researchers,
 Through its streamlined design and robust database, this project offers a modernized approach to legal research, making it an invaluable tool for the legal profession and beyond.
 
 User requirements
+
 Everyone (Lawyers, Students, Citizens…):
 The system is designed to be inclusive and accessible to a wide range of users, including legal professionals, academic researchers, and the general public. Lawyers can utilize the system to quickly locate and retrieve case-related information crucial to their work, such as case names, descriptions, case types, and court types. Students, particularly those studying law or related fields, can use the system as an educational resource to explore legal cases and understand key legal concepts. Citizens can also benefit by searching for cases of personal interest or relevance.
 The search functionality is highly user-friendly, allowing users to find cases by entering the case name. Additionally, the system offers a filtering option, enabling users to narrow down their searches based on specific criteria, such as court type, legal area, and availability. This ensures that users can efficiently access the precise case information they need without unnecessary navigation or effort.
@@ -20,5 +21,18 @@ SIGN IN - SIGN UP PAGE
 
 ![image](https://github.com/user-attachments/assets/72522d45-583e-42ff-a481-0a609f16c4c8)
 USER PAGE
+
+![image](https://github.com/user-attachments/assets/b6a3eb75-8358-4e12-99de-0a808bed8cfd)
+ADMIN PAGE
+
+![image](https://github.com/user-attachments/assets/de3cc5f8-3f93-4156-8ae6-689caf050790)
+UPDATE CASE SECTION (ADMIN)
+
+![image](https://github.com/user-attachments/assets/ff9a1bb4-cf78-4bbc-9c86-d7f8b1a536c6)
+ADD CASE SECTION (ADMIN)
+
+
+
+
 
 
