@@ -1,0 +1,33 @@
+[package]
+name = "backend"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rocket = { version = "0.5.1", features = ["json"] }
+serde = { version = "1.0.215", features = ["derive"] }
+jwt = "0.16.0"
+hmac = "0.12.1"
+sha2 = "0.10.8"
+mysql = "25.0.1"
+
+# Compilation Settings
+[profile.dev]
+opt-level = 0
+debug-assertions = true
+
+[profile.dev.package."*"]
+opt-level = 0
+debug-assertions = true
+
+[profile.release]
+opt-level = 3
+strip = true
+lto = "fat"
+codegen-units = 1
+panic = 'abort'
+
+[profile.release.package."*"]
+opt-level = 3
+strip = true
+codegen-units = 1
