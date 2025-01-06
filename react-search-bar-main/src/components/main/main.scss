@@ -1,0 +1,32 @@
+body {
+    margin: 0; // Kenar boşluklarını kaldırır
+    padding: 0; // Kenar dolgularını kaldırır
+    background: url('/path/to/your/image.jpg') no-repeat center center;
+    background-size: cover; // Resmi tam sayfaya ölçekler
+    background-attachment: fixed; // Arka planı sabit tutar (scroll yapılınca hareket etmez)
+}
+
+
+
+.container {
+    max-width: 100%;
+    margin: 0 !important;
+    position: relative; // Normal akışta yer alsın
+    z-index: 1; // Arka planın üstünde olması için
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    width: 100% !important;
+    height: 100vh; // Sayfanın tamamını kaplamak için
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('../../assets/background.jpg') no-repeat center center;
+    background-size: cover; // Resmi tam boyutta ölçeklendirmek için
+    background-attachment: cover;
+}
+.card .buttons-container {
+    position: absolute;
+    bottom: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+}
+
+
+
+

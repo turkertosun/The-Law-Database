@@ -1,0 +1,148 @@
+Endpoint: /signup
+Method: POST
+Parameters:
+{
+    username: String,
+    password: String,
+    email: String
+}
+Response:
+{
+    status: ("SUCCESS" | "FAILURE"),
+    [jwt]: String,
+    [reason]: String
+}
+Notes:
+This endpoint is used to create new accounts. If the account is created
+successfully, the signed JWT will be returned.
+If failure is returned, "reason" is a user-friendly explanation why.
+
+
+
+Endpoint: /signin
+Method: POST
+Parameters:
+{
+    email: String,
+    password: String
+}
+Response:
+{
+    status: ("SUCCESS" | "FAILURE"),
+    [jwt]: String,
+    [reason]: String
+}
+Notes:
+Similar as /signup. This endpoint will return the signed JWT if the
+email and password match an account.
+If failure is returned, "reason" is a user-friendly explanation why.
+
+
+
+Endpoint: /search
+Method: GET
+Parameters:
+{
+    query: String,
+    filters: {
+        courtType: ("ALL" | "FEDERAL" | "STATE"),
+        caseType: ("ALL" | "CRIMINAL" | "MENTAL" | "FINANCIAL"),
+        availability: ("ALL" | "ONGOING" | "FINISHED")
+    },
+    jwt: String
+}
+Response:
+{
+    cases: [
+        {
+            caseId: Integer,
+            caseName: String,
+            caseDescription: String,
+            court: String,
+            caseType: String,
+            availability: String,
+            judgeName: String,
+            courtRegion: String,
+            state: String,
+            legalArea: String
+        }
+    ]
+}
+Notes:
+This endpoint matches the "query" field with the name or description of
+cases. Right now the filters are treated as enums to match the frontend
+layout, but we could also support booleans so that the filters could
+be combined (ex: filtering for both mental and financial cases).
+
+
+
+Endpoint: /add
+Method: POST
+Parameters:
+{
+    case: {
+        caseName: String,
+        caseDescription: String,
+        court: String,
+        caseType: String,
+        availability: String,
+        judgeName: String,
+        courtRegion: String,
+        state: String,
+        legalArea: String
+    },
+    jwt: String
+}
+Response:
+{
+    status: ("SUCCESS" | "FAILURE"),
+    [caseId]: Integer
+}
+Notes:
+If adding the case is successful, the caseId will be returned.
+This endpoint fails unless the user is admin.
+
+
+
+Endpoint: /update
+Method: POST
+Parameters:
+{
+    caseId: Integer,
+    fields: {
+        [caseName]: String,
+        [caseDescription]: String,
+        [court]: String,
+        [caseType]: String,
+        [availability]: String,
+        [judgeName]: String,
+        [courtRegion]: String,
+        [state]: String,
+        [legalArea]: String
+    },
+    jwt: String
+}
+Response:
+{
+    status: ("SUCCESS" | "FAILURE"),
+}
+Notes:
+The caseId must be specified. All of the fields are optional, so only
+the ones which are being updated need to be included.
+This endpoint fails unless the user is admin.
+
+
+
+Endpoint: /delete
+Method: POST
+Parameters:
+{
+    caseId: Integer,
+    jwt: String
+}
+Response:
+{
+    status: ("SUCCESS" | "FAILURE"),
+}
+Notes:
+This endpoint fails unless the user is admin.
